@@ -59,31 +59,8 @@ Extracted:
   "horizon_days": 30
 }
 
-2️⃣ Universe Selection
-["btc", "eth", "ada", "dot", "xrp", "sol"]
 
-3️⃣ Bucket Construction
-
-Portfolios generated:
-
-Conservative
-Balanced
-Aggressive
-
-
-All with equal weighting.
-
-4️⃣ Backtesting Example Output
-{
-  "name": "Balanced",
-  "total_return_pct": 12.4,
-  "coins": [
-    {"symbol": "eth", "weight": 0.25, "return_pct": 10.2},
-    {"symbol": "dot", "weight": 0.25, "return_pct": 15.0}
-  ]
-}
-
-🔍 Query Routing Logic
+## **🔍 Query Routing Logic**
 
 If the query is:
 
