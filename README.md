@@ -105,7 +105,7 @@ RAG Explanation
 
 <img width="940" alt="image" src="https://github.com/user-attachments/assets/c18daf15-3062-4d86-8211-058f7d7c25c4" />
 
-Screenshots:
+
 
 <img width="940" height="488" alt="image" src="https://github.com/user-attachments/assets/71803801-9122-4e47-ae66-8c26714502bd" />
 
