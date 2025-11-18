@@ -1,61 +1,202 @@
+# 📊 Crypto Trading Assistant — Multi-Agent LLM System  
+_A Kaggle Agents Intensive Capstone Project — Freestyle Track_
 
-📊 Crypto Trading Assistant
+This project is an **AI-powered Crypto Trading Assistant** that combines:
 
-An AI-powered trading assistant that combines real-time market data (API) with contextual reasoning (RAG).
+- **Real-time market data**
+- **Rule-based trading signals**
+- **Multi-agent portfolio construction**
+- **RAG-based question answering**
+- **Streamlit interactive UI**
 
-🚀 Features
+It is designed for the Google x Kaggle **5-Day AI Agents Intensive Capstone**, Freestyle Track.
 
-✅ Live Market Data (via CoinGecko API)
+---
 
-Get the latest price of supported coins (BTC, ETH, ADA, LTC, XRP, DOT, DOGE, SOL).
+## 🚀 Features
 
-View 7-day price trend charts for quick technical insight.
+### 🔹 1. Real-Time Market Tools (CoinGecko API)
+- Live price lookups  
+- 7-day trend analysis  
+- Automatic chart generation  
+- Rule-based Buy/Sell signals  
 
-Rule-based Buy/Sell signals (based on 7-day percentage change).
+### 🔹 2. RAG-Powered Q&A  
+Using a retrieval-augmented generation pipeline, the assistant can answer:
 
-✅ RAG-Powered Q&A (LangChain + Local LLM)
+- General crypto questions  
+- Blockchain terminology queries  
+- Market concept explanations  
 
-Ask general crypto questions (e.g., “What is Bitcoin halving?”, “Explain Proof of Stake”).
+### 🔹 3. **NEW: Multi-Agent Portfolio Bucket System**
+This upgrade introduces a full **multi-agent crypto portfolio constructor**:
 
-Get educational explanations from indexed documents.
+**Agents included:**
+1. **Preference Agent** — extracts user intents (risk level, #coins, time horizon)  
+2. **Universe Agent** — selects candidate coins  
+3. **Bucket Construction Agent** — builds Conservative / Balanced / Aggressive portfolios  
+4. **Backtest Agent** — evaluates returns based on historical market data  
+5. **Controller Agent** — routes user queries to the correct agent pipeline  
 
-Handle contextual queries that don’t require real-time data.
+This satisfies the **Multi-Agent** and **Tools** requirements for the Capstone.
 
-⚙️ How It Works
+### 🔹 4. Interactive Streamlit UI
+Users can:
+- Ask natural-language questions  
+- Request bucket portfolios  
+- Trigger trend or price charts  
+- View RAG explanations  
+- Retrieve market data instantly  
 
-🔹 Queries using API (Live Data):
+---
 
-"BTC price", "ETH price now", "Live ADA price" → fetches real-time price.
+## 🧠 System Architecture
 
-"BTC trend", "Show ETH trend" → plots 7-day trend chart.
+                ┌───────────────────────────┐
+                │       Streamlit UI        │
+                │  (User chat & dashboard)  │
+                └──────────────┬────────────┘
+                               │
+                               ▼
+                ┌───────────────────────────┐
+                │     Controller Agent      │
+                │  (Intent Routing Engine)  │
+                └───────────┬─────┬─────────┘
+                            │     │
+      ┌─────────────────────┘     └────────────────────────────┐
+      ▼                                                         ▼
+┌───────────────┐                                    ┌───────────────────────┐
+│ Portfolio Path│                                    │  Trading / RAG Path   │
+└───────┬───────┘                                    └──────────┬────────────┘
+        │                                                       │
+        ▼                                                       ▼
+┌────────────────────┐                                ┌───────────────────────┐
+│ 1.Preferences Agent│                                │ Market Data Agent     │
+│ Extract risk, size │                                │ - Price, Trend, Signal│
+└─────────┬──────────┘                                └──────────┬────────────┘
+          │                                                      │
+          ▼                                                      ▼
+┌────────────────────────┐                             ┌─────────────────────────┐
+│ 2. Universe Agent      │                            │ RAG Knowledge Agent     │
+│ Select candidate coins │                            │ Explain concepts        │
+└───────────┬────────────┘                             └──────────┬───────────--─┘
+            │                                                     │
+            ▼                                                     ▼
+┌────────────────────────┐                             ┌─────────────────────────┐
+│ 3. Bucket Builder Agent│                             │ Response Generator      │
+│ Create Conservative /  │                             │ Final formatted answer  │
+│ Balanced / Aggressive  │                             │                         │
+└──────────┬─────────────┘                             └─────────────────────────┘
+           │
+           ▼
+┌──────────────────────────┐
+│ 4. Backtest Agent        │
+│ Evaluate portfolio return│
+└──────────────────────────┘
+---
 
-"Should I buy BTC?", "ETH sell?" → uses 7-day % change to suggest BUY / SELL / HOLD.
+## 🧩 How the Bucket Pipeline Works
 
-🔹 Queries using RAG (Context + Docs):
+### **1️⃣ User Preference Extraction**
+Example query:
 
-"What is Bitcoin?"
+> “Create a low-risk portfolio with 5 coins for the next 30 days”
 
-"How does Ethereum staking work?"
+Parsed preferences:
 
-"Explain blockchain consensus mechanisms."
+```json
+{
+  "risk": "conservative",
+  "num_coins": 5,
+  "horizon_days": 30
+}
+2️⃣ Universe Selection
+Based on COIN_MAP in market.py.
 
-"Risks of investing in crypto?"
+Example:
 
-⚙️ Tech-stack:
+css
+Copy code
+["btc", "eth", "ada", "dot", "xrp", "sol", ...]
+3️⃣ Bucket Construction
+Builds three portfolios:
 
---Python 3.9+
+Conservative
 
---Streamlit (UI)
+Balanced
 
---CoinGecko API (Live Market Data)
+Aggressive
 
---LangChain + Ollama (RAG + LLM)
+Each with equal weights.
 
---Matplotlib (Charts)
+4️⃣ Backtesting
+Uses historical price data to estimate:
+
+Per-coin return
+
+Portfolio return
+
+Example:
+
+json
+Copy code
+{
+  "name": "Balanced",
+  "total_return_pct": 12.4,
+  "coins": [
+    {"symbol": "eth", "weight": 0.25, "return_pct": 10.2},
+    {"symbol": "dot", "weight": 0.25, "return_pct": 15.0},
+    ...
+  ]
+}
+🖥 Running the App
+Install dependencies
+bash
+Copy code
+pip install -r requirements.txt
+Run Streamlit
+bash
+Copy code
+streamlit run app.py
+🎯 Example Queries to Try
+Portfolio / Bucket Queries
+“Build a conservative crypto bucket.”
+
+“Create a 5-coin aggressive portfolio.”
+
+“I want a balanced portfolio for the next 90 days.”
+
+Trading Queries
+“Show me the 7-day trend of ETH.”
+
+“What is the price of BTC?”
+
+“Should I buy SOL today?”
+
+RAG Queries
+“Explain proof-of-stake.”
+
+“What is Bitcoin halving?”
+
+“What is a liquidity pool?”
 
 
 If the query is about definitions, concepts, risks, or general knowledge → it’s answered with RAG.
 If the query is about prices, trends, buy/sell signals → it’s answered with API + charts.
+
+📝 License
+
+This project is licensed under CC-BY-SA 4.0, as required for Kaggle Capstone winners.
+
+🙌 Acknowledgements
+
+Google & Kaggle — Agents Intensive Course
+
+CoinGecko API — Market Data
+
+Streamlit — UI Framework
+
+Open-source LLM community
 
 Screenshots:
 
