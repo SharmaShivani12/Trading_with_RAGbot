@@ -26,7 +26,8 @@ The system can intelligently answer:
 - Market explanations  
 
 Using retrieval-augmented generation.
-# 🔹 3. NEW: Multi-Agent Portfolio Bucket System
+# 🔹 3. NEW: Multi-Agent Portfolio Bucket System 
+(this functionality is newly added for this project)
 
 ### Included Agents:
 - **Preference Agent**  
