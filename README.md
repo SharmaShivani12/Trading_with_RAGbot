@@ -1,4 +1,3 @@
-✅ FULLY CORRECTED README SECTION (Copy–Paste This)
 # 📊 Crypto Trading Assistant — Multi-Agent LLM System
 ### _A Kaggle Agents Intensive Capstone Project — Freestyle Track_
 
