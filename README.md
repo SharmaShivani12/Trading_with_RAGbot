@@ -68,11 +68,14 @@ Extracted:
 }
 
 
-
-
-
 If the query is about definitions, concepts, risks, or general knowledge → it’s answered with RAG.
+
 If the query is about prices, trends, buy/sell signals → it’s answered with API + charts.
+
+🖥 Running the App
+Install dependencies : pip install -r requirements.txt
+Run Streamlit : streamlit run app.py
+
 
 📝 License
 
