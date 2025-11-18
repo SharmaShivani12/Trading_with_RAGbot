@@ -12,8 +12,6 @@ This project is an **AI-powered Crypto Trading Assistant** that combines:
 
 Designed for the **Google x Kaggle 5-Day AI Agents Intensive Capstone**, Freestyle Track.
 
----
-
 # 🚀 Features
 
 ## 🔹 1. Real-Time Market Tools (CoinGecko API)
@@ -41,67 +39,6 @@ Using retrieval-augmented generation.
 - **Backtest Agent**  
 - **Controller Agent**  
 
----
-
-# 🧩 How the Bucket Pipeline Works
-
-## **1️⃣ User Preference Extraction**
-
-Query:
-> “Create a low-risk portfolio with 5 coins for 30 days”
-
-Extracted:
-
-```json
-{
-  "risk": "conservative",
-  "num_coins": 5,
-  "horizon_days": 30
-}
-
-
-## **🔍 Query Routing Logic**
-
-If the query is:
-
-Definitions / concepts / risks → RAG
-
-Prices / trends / signals → API + charts
-
-Portfolio request → Multi-Agent Pipeline
-
-🖥 Running the App
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-
-Run Streamlit:
-
-streamlit run app.py
-
-📸 Screenshots
-Dashboard
-<img width="940" src="https://github.com/user-attachments/assets/71803801-9122-4e47-ae66-8c26714502bd" />
-Portfolio Bucket Output
-<img width="940" src="https://github.com/user-attachments/assets/76c1f4b1-b6a3-4774-8796-65d80abb442e" />
-RAG Explanation
-<img width="940" src="https://github.com/user-attachments/assets/c18daf15-3062-4d86-8211-058f7d7c25c4" />
-📝 License
-
-CC-BY-SA 4.0
-
-🙌 Acknowledgements
-
-Google & Kaggle
-
-CoinGecko API
-
-Streamlit
-
-Open-source LLM community
-
 If the query is about definitions, concepts, risks, or general knowledge → it’s answered with RAG.
 
 If the query is about prices, trends, buy/sell signals → it’s answered with API + charts.
@@ -112,8 +49,8 @@ Run Streamlit : streamlit run app.py
 
 
 📝 License
-
 This project is licensed under CC-BY-SA 4.0, as required for Kaggle Capstone winners.
+
 
 🙌 Acknowledgements
 
@@ -138,7 +75,6 @@ Portfolio Bucket Output
 RAG Explanation
 
 <img width="940" alt="image" src="https://github.com/user-attachments/assets/c18daf15-3062-4d86-8211-058f7d7c25c4" />
-
 
 
 <img width="940" height="488" alt="image" src="https://github.com/user-attachments/assets/71803801-9122-4e47-ae66-8c26714502bd" />
