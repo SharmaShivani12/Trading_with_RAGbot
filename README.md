@@ -27,9 +27,6 @@ The system can intelligently answer:
 - Market explanations  
 
 Using retrieval-augmented generation.
-
----
-
 # 🔹 3. NEW: Multi-Agent Portfolio Bucket System
 
 ### Included Agents:
@@ -39,6 +36,15 @@ Using retrieval-augmented generation.
 - **Backtest Agent**  
 - **Controller Agent**  
 
+### 🔹 🔍 Query Routing Logic
+
+If the query is:
+
+Definitions / concepts / risks → RAG
+
+Prices / trends / signals → API + charts
+
+Portfolio request → Multi-Agent Pipeline
 If the query is about definitions, concepts, risks, or general knowledge → it’s answered with RAG.
 
 If the query is about prices, trends, buy/sell signals → it’s answered with API + charts.
@@ -52,7 +58,7 @@ Run Streamlit : streamlit run app.py
 This project is licensed under CC-BY-SA 4.0, as required for Kaggle Capstone winners.
 
 
-🙌 Acknowledgements
+### 🔹 🙌 Acknowledgements
 
 Google & Kaggle — Agents Intensive Course
 
@@ -62,7 +68,7 @@ Streamlit — UI Framework
 
 Open-source LLM community
 
-📸 Screenshots:
+### 🔹📸 Screenshots:
 
 Dashboard
 
@@ -77,11 +83,7 @@ RAG Explanation
 <img width="940" alt="image" src="https://github.com/user-attachments/assets/c18daf15-3062-4d86-8211-058f7d7c25c4" />
 
 
-<img width="940" height="488" alt="image" src="https://github.com/user-attachments/assets/71803801-9122-4e47-ae66-8c26714502bd" />
 
-<img width="940" height="462" alt="image" src="https://github.com/user-attachments/assets/76c1f4b1-b6a3-4774-8796-65d80abb442e" />
-
-<img width="940" height="459" alt="image" src="https://github.com/user-attachments/assets/c18daf15-3062-4d86-8211-058f7d7c25c4" />
 
 
 
