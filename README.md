@@ -88,18 +88,26 @@ Streamlit — UI Framework
 
 Open-source LLM community
 
-📸 Screenshots
+📸 Screenshots:
+
 Dashboard
+
 <img width="940" alt="image" src="https://github.com/user-attachments/assets/71803801-9122-4e47-ae66-8c26714502bd" />
+
 Portfolio Bucket Output
+
 <img width="940" alt="image" src="https://github.com/user-attachments/assets/76c1f4b1-b6a3-4774-8796-65d80abb442e" />
+
 RAG Explanation
+
 <img width="940" alt="image" src="https://github.com/user-attachments/assets/c18daf15-3062-4d86-8211-058f7d7c25c4" />
 
 Screenshots:
 
 <img width="940" height="488" alt="image" src="https://github.com/user-attachments/assets/71803801-9122-4e47-ae66-8c26714502bd" />
+
 <img width="940" height="462" alt="image" src="https://github.com/user-attachments/assets/76c1f4b1-b6a3-4774-8796-65d80abb442e" />
+
 <img width="940" height="459" alt="image" src="https://github.com/user-attachments/assets/c18daf15-3062-4d86-8211-058f7d7c25c4" />
 
 
