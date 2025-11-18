@@ -93,7 +93,6 @@ Users can:
 │ 4. Backtest Agent        │
 │ Evaluate portfolio return│
 └──────────────────────────┘
----
 
 ## 🧩 How the Bucket Pipeline Works
 
